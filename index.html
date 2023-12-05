@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  #title{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+#title button{
+  width: 100%;
+  background-color: goldenrod;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+}
+.card{
+    width: 19%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+      margin-bottom: 2rem;
+    gap: 4px;
+}
+.card h4{
+  font-size: 18px;
+}
+
+.card img{
+    height:250px;
+    width: 100%;
+    
+}
+</style>
+<body>
+    <h1>FILM POSTER</h1>
+    <div id="title">
+
+    </div>
+   
+    <div id="card"></div>
+
+    
+  <script>
+    const allfilms = [
+        {
+            
+            title: 'movie',
+            desc: 'a movie filled with lot of suspense and war',
+            poster:'johnwick.jpeg',
+            year: 1993,
+        },
+
+
+
+        {
+          
+          title: 'five rights',
+          poster: 'fiverights.jpeg',
+          desc: 'this movie comprise five different people with individual belief',
+          year: 2001,
+          
+        },
+
+        {
+          
+          title: 'smile',
+          poster:"fiverights.jpeg",
+          desc: 'this film is full of happiness and laughter',
+          year: 1999
+          
+          
+        },
+
+        {
+          
+          title: 'jaw',
+          poster: 'jaw.jpeg',
+          desc: 'this movie is filled with different expression',
+          year: 2002,
+          
+        },
+
+        {
+        
+          title: 'john wick',
+          poster: 'johnwick.jpeg',
+          desc: 'a movie based on killing of dog belonging to the actor',
+          year: 2003,
+          
+        },
+
+        {
+          
+          title: 'milan girls',
+          poster: 'milangirls.jpeg',
+          desc: 'a movie filled with female characters from milan in italy',
+          year: 2004,
+          
+        },
+ 
+        {
+        
+          title: 'mystery',
+          poster: 'mystery.jpeg',
+          desc: 'this is about a mysterious life of the writer',
+          year: 2005,
+          
+        },
+
+        {
+        
+          title: 'spiderman',
+          poster: 'spiderman.jpeg',
+          desc: 'spiderman is a movie of a man who looks like spider',
+          year: 2006,
+          
+        },
+
+        {
+        
+          title: 'tesla',
+          poster: 'tesla.jpeg',
+          desc: "tesla is an interesting movie and it's very interesting",
+          year: 2007,
+          
+        },
+
+        {
+          
+          title: 'titanic',
+          poster: 'titanic.jpeg',
+          desc: 'movie basically on lovers namely rose and jack, jack died of love',
+          year: 2008,
+          
+        },
+    ]
+
+    console.log(allfilms)
+
+    const filmcont = document.getElementById('title')
+console.log(filmcont)
+
+
+// prodCont.innerHTML= card
+const createProduct=()=>{
+    allfilms.forEach((film, index)=>{
+        // console.log(index)
+        const card = `
+        <div key=${index} class='card'>
+            <img src=${film.poster} alt=${film.title} />
+           
+            <h4>${film.desc}</h4>
+               <h4>${film.title}</h4>
+            <p>This is film ${index}</p>
+            <small>${film.year }</small>
+            <button>Play</button>
+            <br>
+        </div>
+    `        
+    filmcont.innerHTML += card 
+    })
+}
+createProduct()
+
+const newProducts = document.getElementById('card')
+const createProduct2=()=>{
+    allProducts.map((prod)=>{
+        const Card = document.createElement('div')
+        newProducts.appendChild(Card)
+        const image = document.createElement('img')
+        image.src=prod.image
+        const title = document.createElement('h4')
+        title.innerHTML = prod.title
+        const description = document.createElement('p')
+        description.innerHTML = prod.desc
+        const price  = document.createElement('p')
+        price.innerHTML = prod.price
+        const buyNow = document.createElement('button')
+        buyNow.innerHTML = 'Play'
+    
+
+        newCard.appendChild(image)
+        newCard.appendChild(title)
+        newCard.appendChild(description)
+        newCard.appendChild(year)
+        newCard.appendChild(play)
+
+        newCard.className='card'
+
+        newProducts.appendChild(Card)
+        
+    })
+}
+
+createfilm2()
+
+  </script>  
+</body>
+</html>
